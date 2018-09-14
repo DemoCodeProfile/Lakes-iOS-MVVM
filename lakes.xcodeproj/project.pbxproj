@@ -1,0 +1,749 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CAD9C7494A38EA6E9CDBCE4F /* Pods_lakes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F517C4313529F68B312F1 /* Pods_lakes.framework */; };
+		D0D060E0529941F805DB8B68 /* Pods_lakesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E89357397FF04099A231F1 /* Pods_lakesTests.framework */; };
+		DDFF66332148C313008BB99C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66322148C313008BB99C /* AppDelegate.swift */; };
+		DDFF66352148C313008BB99C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66342148C313008BB99C /* MapViewController.swift */; };
+		DDFF66382148C313008BB99C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFF66362148C313008BB99C /* Main.storyboard */; };
+		DDFF663A2148C317008BB99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFF66392148C317008BB99C /* Assets.xcassets */; };
+		DDFF663D2148C317008BB99C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFF663B2148C317008BB99C /* LaunchScreen.storyboard */; };
+		DDFF66482148C317008BB99C /* lakesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66472148C317008BB99C /* lakesTests.swift */; };
+		DDFF665B2148C676008BB99C /* Lake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF665A2148C676008BB99C /* Lake.swift */; };
+		DDFF665D2148C6E2008BB99C /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF665C2148C6E2008BB99C /* ApplicationAssembly.swift */; };
+		DDFF665F2148C776008BB99C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF665E2148C776008BB99C /* Constants.swift */; };
+		DDFF66612148C77F008BB99C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66602148C77F008BB99C /* Data.swift */; };
+		DDFF66632148C808008BB99C /* MapLakesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66622148C808008BB99C /* MapLakesViewModel.swift */; };
+		DDFF66652148C84E008BB99C /* LakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66642148C84E008BB99C /* LakeViewController.swift */; };
+		DDFF66672148C877008BB99C /* LakeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66662148C877008BB99C /* LakeDetailsViewModel.swift */; };
+		DDFF66692148CB0A008BB99C /* LakeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66682148CB0A008BB99C /* LakeInteractor.swift */; };
+		DDFF666B2148CB2D008BB99C /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF666A2148CB2D008BB99C /* MapInteractor.swift */; };
+		DDFF666F2148CCD8008BB99C /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF666E2148CCD8008BB99C /* MapRouter.swift */; };
+		DDFF66712148CCF9008BB99C /* LakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66702148CCF9008BB99C /* LakeAssembly.swift */; };
+		DDFF66732148CD08008BB99C /* MapAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66722148CD08008BB99C /* MapAssembly.swift */; };
+		DDFF66772148CDD3008BB99C /* JsonLakesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66762148CDD3008BB99C /* JsonLakesRepository.swift */; };
+		DDFF66792148CE1F008BB99C /* BaseSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66782148CE1F008BB99C /* BaseSpecification.swift */; };
+		DDFF667C2148CE5B008BB99C /* JsonSpecifiaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF667B2148CE5B008BB99C /* JsonSpecifiaction.swift */; };
+		DDFF667E2148CE76008BB99C /* LakeByIdSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF667D2148CE76008BB99C /* LakeByIdSpecification.swift */; };
+		DDFF66822148CEFD008BB99C /* ImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66812148CEFD008BB99C /* ImageLoadingService.swift */; };
+		DDFF66842148CF43008BB99C /* JsonParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66832148CF43008BB99C /* JsonParserService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDFF66442148C317008BB99C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDFF66272148C312008BB99C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDFF662E2148C313008BB99C;
+			remoteInfo = lakes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3682059DE4498222BE922A59 /* Pods-lakes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lakes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lakes/Pods-lakes.debug.xcconfig"; sourceTree = "<group>"; };
+		64E89357397FF04099A231F1 /* Pods_lakesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lakesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8F517C4313529F68B312F1 /* Pods_lakes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lakes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B553333938B8FEE3AA21E089 /* Pods-lakes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lakes.release.xcconfig"; path = "Pods/Target Support Files/Pods-lakes/Pods-lakes.release.xcconfig"; sourceTree = "<group>"; };
+		DDFF662F2148C313008BB99C /* lakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFF66322148C313008BB99C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DDFF66342148C313008BB99C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DDFF66372148C313008BB99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDFF66392148C317008BB99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDFF663C2148C317008BB99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDFF663E2148C317008BB99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDFF66432148C317008BB99C /* lakesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lakesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFF66472148C317008BB99C /* lakesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lakesTests.swift; sourceTree = "<group>"; };
+		DDFF66492148C317008BB99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDFF665A2148C676008BB99C /* Lake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lake.swift; sourceTree = "<group>"; };
+		DDFF665C2148C6E2008BB99C /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		DDFF665E2148C776008BB99C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DDFF66602148C77F008BB99C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		DDFF66622148C808008BB99C /* MapLakesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLakesViewModel.swift; sourceTree = "<group>"; };
+		DDFF66642148C84E008BB99C /* LakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakeViewController.swift; sourceTree = "<group>"; };
+		DDFF66662148C877008BB99C /* LakeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakeDetailsViewModel.swift; sourceTree = "<group>"; };
+		DDFF66682148CB0A008BB99C /* LakeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakeInteractor.swift; sourceTree = "<group>"; };
+		DDFF666A2148CB2D008BB99C /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		DDFF666E2148CCD8008BB99C /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		DDFF66702148CCF9008BB99C /* LakeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakeAssembly.swift; sourceTree = "<group>"; };
+		DDFF66722148CD08008BB99C /* MapAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAssembly.swift; sourceTree = "<group>"; };
+		DDFF66762148CDD3008BB99C /* JsonLakesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLakesRepository.swift; sourceTree = "<group>"; };
+		DDFF66782148CE1F008BB99C /* BaseSpecification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSpecification.swift; sourceTree = "<group>"; };
+		DDFF667B2148CE5B008BB99C /* JsonSpecifiaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSpecifiaction.swift; sourceTree = "<group>"; };
+		DDFF667D2148CE76008BB99C /* LakeByIdSpecification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakeByIdSpecification.swift; sourceTree = "<group>"; };
+		DDFF66812148CEFD008BB99C /* ImageLoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingService.swift; sourceTree = "<group>"; };
+		DDFF66832148CF43008BB99C /* JsonParserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParserService.swift; sourceTree = "<group>"; };
+		E0C1234E346058412D8A61BB /* Pods-lakesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lakesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-lakesTests/Pods-lakesTests.release.xcconfig"; sourceTree = "<group>"; };
+		EC885E4D6B8DB6F07D662C4A /* Pods-lakesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lakesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lakesTests/Pods-lakesTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDFF662C2148C313008BB99C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAD9C7494A38EA6E9CDBCE4F /* Pods_lakes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFF66402148C317008BB99C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0D060E0529941F805DB8B68 /* Pods_lakesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1613FF5C0AA26C911A85523C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3682059DE4498222BE922A59 /* Pods-lakes.debug.xcconfig */,
+				B553333938B8FEE3AA21E089 /* Pods-lakes.release.xcconfig */,
+				EC885E4D6B8DB6F07D662C4A /* Pods-lakesTests.debug.xcconfig */,
+				E0C1234E346058412D8A61BB /* Pods-lakesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		47C54B2AB7D7A7EAB60EE4AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B8F517C4313529F68B312F1 /* Pods_lakes.framework */,
+				64E89357397FF04099A231F1 /* Pods_lakesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDFF66262148C312008BB99C = {
+			isa = PBXGroup;
+			children = (
+				DDFF66312148C313008BB99C /* lakes */,
+				DDFF66462148C317008BB99C /* lakesTests */,
+				DDFF66302148C313008BB99C /* Products */,
+				1613FF5C0AA26C911A85523C /* Pods */,
+				47C54B2AB7D7A7EAB60EE4AD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DDFF66302148C313008BB99C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF662F2148C313008BB99C /* lakes.app */,
+				DDFF66432148C317008BB99C /* lakesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDFF66312148C313008BB99C /* lakes */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66552148C54E008BB99C /* Application */,
+				DDFF66522148C516008BB99C /* Models */,
+				DDFF66532148C524008BB99C /* Services */,
+				DDFF66562148C5A1008BB99C /* MapLakes */,
+				DDFF66572148C5B3008BB99C /* LakeDetails */,
+				DDFF66542148C532008BB99C /* Supporting Files */,
+			);
+			path = lakes;
+			sourceTree = "<group>";
+		};
+		DDFF66462148C317008BB99C /* lakesTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66472148C317008BB99C /* lakesTests.swift */,
+				DDFF66492148C317008BB99C /* Info.plist */,
+			);
+			path = lakesTests;
+			sourceTree = "<group>";
+		};
+		DDFF66522148C516008BB99C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF665A2148C676008BB99C /* Lake.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DDFF66532148C524008BB99C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66752148CD34008BB99C /* Specifications */,
+				DDFF66742148CD25008BB99C /* Repositories */,
+				DDFF66812148CEFD008BB99C /* ImageLoadingService.swift */,
+				DDFF66832148CF43008BB99C /* JsonParserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DDFF66542148C532008BB99C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66362148C313008BB99C /* Main.storyboard */,
+				DDFF66392148C317008BB99C /* Assets.xcassets */,
+				DDFF663B2148C317008BB99C /* LaunchScreen.storyboard */,
+				DDFF663E2148C317008BB99C /* Info.plist */,
+				DDFF665E2148C776008BB99C /* Constants.swift */,
+				DDFF66602148C77F008BB99C /* Data.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDFF66552148C54E008BB99C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66322148C313008BB99C /* AppDelegate.swift */,
+				DDFF665C2148C6E2008BB99C /* ApplicationAssembly.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		DDFF66562148C5A1008BB99C /* MapLakes */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66592148C5F5008BB99C /* Modules */,
+			);
+			path = MapLakes;
+			sourceTree = "<group>";
+		};
+		DDFF66572148C5B3008BB99C /* LakeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66582148C5E3008BB99C /* Modules */,
+			);
+			path = LakeDetails;
+			sourceTree = "<group>";
+		};
+		DDFF66582148C5E3008BB99C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66642148C84E008BB99C /* LakeViewController.swift */,
+				DDFF66662148C877008BB99C /* LakeDetailsViewModel.swift */,
+				DDFF66682148CB0A008BB99C /* LakeInteractor.swift */,
+				DDFF66702148CCF9008BB99C /* LakeAssembly.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DDFF66592148C5F5008BB99C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66342148C313008BB99C /* MapViewController.swift */,
+				DDFF66622148C808008BB99C /* MapLakesViewModel.swift */,
+				DDFF666A2148CB2D008BB99C /* MapInteractor.swift */,
+				DDFF666E2148CCD8008BB99C /* MapRouter.swift */,
+				DDFF66722148CD08008BB99C /* MapAssembly.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DDFF66742148CD25008BB99C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF66762148CDD3008BB99C /* JsonLakesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DDFF66752148CD34008BB99C /* Specifications */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF667A2148CE38008BB99C /* Default */,
+				DDFF66782148CE1F008BB99C /* BaseSpecification.swift */,
+			);
+			path = Specifications;
+			sourceTree = "<group>";
+		};
+		DDFF667A2148CE38008BB99C /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF667B2148CE5B008BB99C /* JsonSpecifiaction.swift */,
+				DDFF667D2148CE76008BB99C /* LakeByIdSpecification.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDFF662E2148C313008BB99C /* lakes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFF664C2148C317008BB99C /* Build configuration list for PBXNativeTarget "lakes" */;
+			buildPhases = (
+				879704D820CE30D73A517104 /* [CP] Check Pods Manifest.lock */,
+				DDFF662B2148C313008BB99C /* Sources */,
+				DDFF662C2148C313008BB99C /* Frameworks */,
+				DDFF662D2148C313008BB99C /* Resources */,
+				8C9F7F1556E5573B5F2B0A2D /* [CP] Embed Pods Frameworks */,
+				90FF053ACC8B29BFD56F53F8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lakes;
+			productName = lakes;
+			productReference = DDFF662F2148C313008BB99C /* lakes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDFF66422148C317008BB99C /* lakesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFF664F2148C317008BB99C /* Build configuration list for PBXNativeTarget "lakesTests" */;
+			buildPhases = (
+				49333584D7F297267474F8CF /* [CP] Check Pods Manifest.lock */,
+				DDFF663F2148C317008BB99C /* Sources */,
+				DDFF66402148C317008BB99C /* Frameworks */,
+				DDFF66412148C317008BB99C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDFF66452148C317008BB99C /* PBXTargetDependency */,
+			);
+			name = lakesTests;
+			productName = lakesTests;
+			productReference = DDFF66432148C317008BB99C /* lakesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDFF66272148C312008BB99C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Vadim K";
+				TargetAttributes = {
+					DDFF662E2148C313008BB99C = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					DDFF66422148C317008BB99C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = DDFF662E2148C313008BB99C;
+					};
+				};
+			};
+			buildConfigurationList = DDFF662A2148C312008BB99C /* Build configuration list for PBXProject "lakes" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDFF66262148C312008BB99C;
+			productRefGroup = DDFF66302148C313008BB99C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDFF662E2148C313008BB99C /* lakes */,
+				DDFF66422148C317008BB99C /* lakesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDFF662D2148C313008BB99C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFF663D2148C317008BB99C /* LaunchScreen.storyboard in Resources */,
+				DDFF663A2148C317008BB99C /* Assets.xcassets in Resources */,
+				DDFF66382148C313008BB99C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFF66412148C317008BB99C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49333584D7F297267474F8CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lakesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		879704D820CE30D73A517104 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lakes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C9F7F1556E5573B5F2B0A2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-lakes/Pods-lakes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lakes/Pods-lakes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90FF053ACC8B29BFD56F53F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-lakes/Pods-lakes-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lakes/Pods-lakes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDFF662B2148C313008BB99C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFF666F2148CCD8008BB99C /* MapRouter.swift in Sources */,
+				DDFF665F2148C776008BB99C /* Constants.swift in Sources */,
+				DDFF66612148C77F008BB99C /* Data.swift in Sources */,
+				DDFF66672148C877008BB99C /* LakeDetailsViewModel.swift in Sources */,
+				DDFF66842148CF43008BB99C /* JsonParserService.swift in Sources */,
+				DDFF665D2148C6E2008BB99C /* ApplicationAssembly.swift in Sources */,
+				DDFF66352148C313008BB99C /* MapViewController.swift in Sources */,
+				DDFF66822148CEFD008BB99C /* ImageLoadingService.swift in Sources */,
+				DDFF667E2148CE76008BB99C /* LakeByIdSpecification.swift in Sources */,
+				DDFF66792148CE1F008BB99C /* BaseSpecification.swift in Sources */,
+				DDFF66632148C808008BB99C /* MapLakesViewModel.swift in Sources */,
+				DDFF667C2148CE5B008BB99C /* JsonSpecifiaction.swift in Sources */,
+				DDFF666B2148CB2D008BB99C /* MapInteractor.swift in Sources */,
+				DDFF66332148C313008BB99C /* AppDelegate.swift in Sources */,
+				DDFF66692148CB0A008BB99C /* LakeInteractor.swift in Sources */,
+				DDFF665B2148C676008BB99C /* Lake.swift in Sources */,
+				DDFF66732148CD08008BB99C /* MapAssembly.swift in Sources */,
+				DDFF66712148CCF9008BB99C /* LakeAssembly.swift in Sources */,
+				DDFF66772148CDD3008BB99C /* JsonLakesRepository.swift in Sources */,
+				DDFF66652148C84E008BB99C /* LakeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFF663F2148C317008BB99C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFF66482148C317008BB99C /* lakesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDFF66452148C317008BB99C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDFF662E2148C313008BB99C /* lakes */;
+			targetProxy = DDFF66442148C317008BB99C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDFF66362148C313008BB99C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFF66372148C313008BB99C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DDFF663B2148C317008BB99C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFF663C2148C317008BB99C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDFF664A2148C317008BB99C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DDFF664B2148C317008BB99C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDFF664D2148C317008BB99C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3682059DE4498222BE922A59 /* Pods-lakes.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U7684CT8V7;
+				INFOPLIST_FILE = "$(SRCROOT)/lakes/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vadim.lakes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDFF664E2148C317008BB99C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B553333938B8FEE3AA21E089 /* Pods-lakes.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U7684CT8V7;
+				INFOPLIST_FILE = "$(SRCROOT)/lakes/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vadim.lakes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDFF66502148C317008BB99C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC885E4D6B8DB6F07D662C4A /* Pods-lakesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = lakesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vadim.lakesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lakes.app/lakes";
+			};
+			name = Debug;
+		};
+		DDFF66512148C317008BB99C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0C1234E346058412D8A61BB /* Pods-lakesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = lakesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vadim.lakesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lakes.app/lakes";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDFF662A2148C312008BB99C /* Build configuration list for PBXProject "lakes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFF664A2148C317008BB99C /* Debug */,
+				DDFF664B2148C317008BB99C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDFF664C2148C317008BB99C /* Build configuration list for PBXNativeTarget "lakes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFF664D2148C317008BB99C /* Debug */,
+				DDFF664E2148C317008BB99C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDFF664F2148C317008BB99C /* Build configuration list for PBXNativeTarget "lakesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFF66502148C317008BB99C /* Debug */,
+				DDFF66512148C317008BB99C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDFF66272148C312008BB99C /* Project object */;
+}

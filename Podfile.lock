@@ -1,0 +1,51 @@
+PODS:
+  - GoogleMaps (2.6.0):
+    - GoogleMaps/Maps (= 2.6.0)
+  - GoogleMaps/Base (2.6.0)
+  - GoogleMaps/Maps (2.6.0):
+    - GoogleMaps/Base
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxGoogleMaps (3.0.1):
+    - GoogleMaps (~> 2.6.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - Swinject (2.4.1)
+  - SwinjectStoryboard (2.0.2):
+    - Swinject (~> 2.4)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - RxCocoa (~> 4.0)
+  - RxGoogleMaps
+  - RxSwift (~> 4.0)
+  - SDWebImage
+  - Swinject
+  - SwinjectStoryboard
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GoogleMaps
+    - RxCocoa
+    - RxGoogleMaps
+    - RxSwift
+    - SDWebImage
+    - Swinject
+    - SwinjectStoryboard
+
+SPEC CHECKSUMS:
+  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxGoogleMaps: 8e8501ee42f2f4095c02e7794ecb0e8758358934
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  Swinject: f7f15a9672e99328c1f07f277091087917215700
+  SwinjectStoryboard: 365698aec11b57c6b14a3c1f52d0308759d377bf
+
+PODFILE CHECKSUM: 83cd211188919cabe6b120450969319968ecbb0a
+
+COCOAPODS: 1.5.3
