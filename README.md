@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/github/license/DemoCodeProfile/Lakes-iOS-MVVM.svg)](https://github.com/DemoCodeProfile/Lakes-iOS-MVVM/blob/master/LICENSE) 
 [![Architecture](https://img.shields.io/badge/architecture-Clean%20Architecture%20MVVM-orange.svg)](https://github.com/DemoCodeProfile/Lakes-iOS/)
 
-This is demo code Clean Architecture (VIPER) - MVP architecture pattern and IoC (DI).
+This is demo code Clean Architecture - MVVM architecture pattern and IoC (DI).
 
 > Before build this application.
 > 1. You must go to **Google API Console**
