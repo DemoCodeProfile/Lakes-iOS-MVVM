@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		CAD9C7494A38EA6E9CDBCE4F /* Pods_lakes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F517C4313529F68B312F1 /* Pods_lakes.framework */; };
 		D0D060E0529941F805DB8B68 /* Pods_lakesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E89357397FF04099A231F1 /* Pods_lakesTests.framework */; };
+		DDDA285F21E64431002085FF /* SharedSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA285E21E64431002085FF /* SharedSequence.swift */; };
+		DDDA286121E64441002085FF /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA286021E64441002085FF /* ObservableType.swift */; };
+		DDDA286321E6454E002085FF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA286221E6454E002085FF /* UIImage.swift */; };
 		DDFF66332148C313008BB99C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66322148C313008BB99C /* AppDelegate.swift */; };
 		DDFF66352148C313008BB99C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF66342148C313008BB99C /* MapViewController.swift */; };
 		DDFF66382148C313008BB99C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFF66362148C313008BB99C /* Main.storyboard */; };
@@ -50,6 +53,9 @@
 		64E89357397FF04099A231F1 /* Pods_lakesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lakesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8F517C4313529F68B312F1 /* Pods_lakes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lakes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B553333938B8FEE3AA21E089 /* Pods-lakes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lakes.release.xcconfig"; path = "Pods/Target Support Files/Pods-lakes/Pods-lakes.release.xcconfig"; sourceTree = "<group>"; };
+		DDDA285E21E64431002085FF /* SharedSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSequence.swift; sourceTree = "<group>"; };
+		DDDA286021E64441002085FF /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		DDDA286221E6454E002085FF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		DDFF662F2148C313008BB99C /* lakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFF66322148C313008BB99C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDFF66342148C313008BB99C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +128,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DDDA285D21E64404002085FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DDDA285E21E64431002085FF /* SharedSequence.swift */,
+				DDDA286021E64441002085FF /* ObservableType.swift */,
+				DDDA286221E6454E002085FF /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DDFF66262148C312008BB99C = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +161,7 @@
 		DDFF66312148C313008BB99C /* lakes */ = {
 			isa = PBXGroup;
 			children = (
+				DDDA285D21E64404002085FF /* Extensions */,
 				DDFF66552148C54E008BB99C /* Application */,
 				DDFF66522148C516008BB99C /* Models */,
 				DDFF66532148C524008BB99C /* Services */,
@@ -468,6 +485,8 @@
 				DDFF66822148CEFD008BB99C /* ImageLoadingService.swift in Sources */,
 				DDFF667E2148CE76008BB99C /* LakeByIdSpecification.swift in Sources */,
 				DDFF66792148CE1F008BB99C /* BaseSpecification.swift in Sources */,
+				DDDA286121E64441002085FF /* ObservableType.swift in Sources */,
+				DDDA285F21E64431002085FF /* SharedSequence.swift in Sources */,
 				DDFF66632148C808008BB99C /* MapLakesViewModel.swift in Sources */,
 				DDFF667C2148CE5B008BB99C /* JsonSpecifiaction.swift in Sources */,
 				DDFF666B2148CB2D008BB99C /* MapInteractor.swift in Sources */,
@@ -475,6 +494,7 @@
 				DDFF66692148CB0A008BB99C /* LakeInteractor.swift in Sources */,
 				DDFF665B2148C676008BB99C /* Lake.swift in Sources */,
 				DDFF66732148CD08008BB99C /* MapAssembly.swift in Sources */,
+				DDDA286321E6454E002085FF /* UIImage.swift in Sources */,
 				DDFF66712148CCF9008BB99C /* LakeAssembly.swift in Sources */,
 				DDFF66772148CDD3008BB99C /* JsonLakesRepository.swift in Sources */,
 				DDFF66652148C84E008BB99C /* LakeViewController.swift in Sources */,

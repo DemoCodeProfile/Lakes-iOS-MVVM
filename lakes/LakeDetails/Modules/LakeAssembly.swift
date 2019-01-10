@@ -36,7 +36,6 @@ class LakeAssembly: Assembly {
         }
         container.storyboardInitCompleted(LakeViewController.self) { (resolver, viewController) in
             viewController.viewModel = resolver.resolve(LakeDetailsViewModel.self)
-            viewController.bindViewModel()
         }
     }
 }

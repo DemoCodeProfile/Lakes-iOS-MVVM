@@ -17,67 +17,102 @@ final class LakeViewController: UIViewController {
     @IBOutlet weak var titleLake: UILabel!
     @IBOutlet weak var descriptionLake: UILabel!
     
-    private var disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     var viewModel: LakeDetailsViewModel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindViewModel()
+    }
     
     func bindViewModel(){
         if let viewModel = viewModel {
-            let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:))).map { _ in }.asDriver(onErrorJustReturn: ())
+            let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+                .mapToVoid()
+                .asDriver(onErrorJustReturn: ())
             
-            let didLoad = viewWillAppear.drive(onNext: {[unowned self] _ in
-                self.showWaitingView()
-            })
+            let output = viewModel.perform(input: ())
             
-            let input = LakeDetailsViewModel.Input(recieveLake: viewWillAppear)
+            let showIndicator = viewWillAppear.drive(rx.showActivityIndicator)
+            let hideIndicator = Driver.merge(
+                output.recievedLake.mapToVoid(),
+                output.fetchError.mapToVoid()
+                )
+                .drive(rx.hideActivityIndicator)
             
-            let output = viewModel.perform(input: input)
+            let recievedTitleLake = output.recievedLake
+                .map { $0.getTitle() }
+                .drive(titleLake.rx.text)
             
-            let recievedLake = output.recievedLake.drive(onNext: { [unowned self] (lake) in
-                self.hideWaitingView()
-                self.titleLake.text = lake.getTitle()
-                self.descriptionLake.text = lake.getDescription()
-            })
+            let recievedDescriptionLake = output.recievedLake
+                .map { $0.getDescription() }
+                .drive(descriptionLake.rx.text)
             
-            let recievedImage = output.recievedImage.drive(onNext: {[unowned self] (img) in
-                self.imageActivityIndicator.stopAnimating()
-                self.photo.image = img?.resizeImage(newWidth: self.view.bounds.width)
-            })
+            let fetchError = output.fetchError
+                .map { $0.localizedDescription }
+                .drive(rx.showError)
             
-            let fetchError = output.fetchError.drive(onNext: {[unowned self] (error) in
-                self.hideWaitingView()
-                self.showError(error.localizedDescription)
-            })
+            let imageActivityIndicatorStop = output.recievedImage
+                .map { _ in return false }
+                .drive(imageActivityIndicator.rx.isAnimating)
             
-            [recievedLake, recievedImage, fetchError, didLoad].forEach { $0.disposed(by: disposeBag) }
+            let recievedImage = output.recievedImage
+                .map { $0?.resizeImage(newWidth: self.view.bounds.width) }
+                .drive(photo.rx.image)
+            
+            [recievedTitleLake,
+             recievedDescriptionLake,
+             imageActivityIndicatorStop,
+             recievedImage,
+             fetchError,
+             showIndicator,
+             hideIndicator
+                ].forEach { $0.disposed(by: disposeBag) }
             
         }
-    }
-    
-    func showError(_ message: String){
-        let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString(message, comment: ""), preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default) { (alertAction) in
-            alert.dismiss(animated: true, completion: nil)
-        }
-        alert.addAction(alertAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func showWaitingView() {
-        let alert = UIAlertController(title: nil, message: NSLocalizedString("Loading data...", comment: ""), preferredStyle: .alert)
-        
-        alert.view.tintColor = UIColor.black
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50)) as UIActivityIndicatorView
-        
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = .gray
-        loadingIndicator.startAnimating()
-        
-        alert.view.addSubview(loadingIndicator)
-        self.navigationController?.present(alert, animated: false, completion: nil)
-    }
-    
-    func hideWaitingView() {
-        self.dismiss(animated: true, completion: nil)
     }
     
 }
+
+private extension Reactive where Base: LakeViewController {
+    var showActivityIndicator: Binder<Void> {
+        return Binder(base) { vc, _ in
+            let alert = UIAlertController(
+                title: nil,
+                message: NSLocalizedString("Loading data...", comment: ""),
+                preferredStyle: .alert
+            )
+            
+            alert.view.tintColor = UIColor.black
+            let loadingIndicator = UIActivityIndicatorView(
+                frame: CGRect(x: 10, y: 5, width: 50, height: 50)
+                ) as UIActivityIndicatorView
+            
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.activityIndicatorViewStyle = .gray
+            loadingIndicator.startAnimating()
+            
+            alert.view.addSubview(loadingIndicator)
+            vc.navigationController?.present(alert, animated: false, completion: nil)
+        }
+    }
+    
+    var hideActivityIndicator: Binder<Void> {
+        return Binder(base) { vc, _ in
+            vc.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    var showError: Binder<String> {
+        return Binder(base) { vc, error in
+            let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString(error, comment: ""), preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Ok", style: .default) { (alertAction) in
+                alert.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(alertAction)
+            vc.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+

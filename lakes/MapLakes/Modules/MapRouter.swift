@@ -22,7 +22,7 @@ final class MapRouter: MapWireframeProtocol {
     
     func toLakeDetails(_ lake: Lake) {
         if let vc = UIStoryboard.init(name: STORYBOARD_NAME, bundle: nil).instantiateViewController(withIdentifier: LAKE_VIEW_CONTROLLER_ID) as? LakeViewController {
-            vc.viewModel.setCurrentLake(lake)
+            vc.viewModel.currentLake.accept(lake)
             vc.title = lake.getTitle()
             viewController.navigationController?.pushViewController(vc, animated: true)
         }

@@ -33,19 +33,22 @@ final class MapViewController: UIViewController {
                     marker.map = viewMap
                 })
             })
-            
-            let fetchError = output.fetchError.drive(onNext: { [unowned self] (error) in
-                let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString(error.localizedDescription, comment: ""), preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "Ok", style: .default) { (alertAction) in
-                    alert.dismiss(animated: true, completion: nil)
-                }
-                alert.addAction(alertAction)
-                self.present(alert, animated: true, completion: nil)
-            })
-            
+            let fetchError = output.fetchError.drive(rx.featchError)
             
             [recievedLakes, fetchError].forEach{ $0.disposed(by: disposeBag) }
         }
     }
 }
 
+private extension Reactive where Base: MapViewController {
+    var featchError: Binder<Error> {
+        return Binder(base) { vc, error in
+            let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString(error.localizedDescription, comment: ""), preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Ok", style: .default) { (alertAction) in
+                alert.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(alertAction)
+            vc.present(alert, animated: true, completion: nil)
+        }
+    }
+}

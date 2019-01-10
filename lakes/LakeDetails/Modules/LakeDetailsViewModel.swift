@@ -14,9 +14,7 @@ import RxCocoa
 
 final class LakeDetailsViewModel:ViewModelType {
     
-    struct Input {
-        let recieveLake: Driver<Void>
-    }
+    typealias Input = Void
     
     struct Output {
         let recievedLake: Driver<Lake>
@@ -24,40 +22,43 @@ final class LakeDetailsViewModel:ViewModelType {
         let fetchError: Driver<Error>
     }
     
-    var mCurrentLake: Lake? {
-        didSet {
-            if let id = self.mCurrentLake?.getId() {
-                self.mInteractor.setSpecification(specification: LakeByIdSpecification(id: id))
-            }
-        }
-    }
-    var mInteractor: LakeInteractorProtocol
+    private var mInteractor: LakeInteractorProtocol
+    private let disposeBag = DisposeBag()
+    let currentLake = BehaviorRelay<Lake?>(value: nil)
     
     init(interactor: LakeInteractorProtocol) {
         self.mInteractor = interactor
     }
     
-    func perform(input: LakeDetailsViewModel.Input) -> LakeDetailsViewModel.Output {
-        let error = PublishSubject<Error>()
-        let loadImage = PublishRelay<String?>()
+    func perform(input: Input) -> Output {
+        let error = PublishRelay<Error>()
         
-        let lake = input.recieveLake.flatMapLatest {[unowned self] _ in
-            return self.mInteractor.fetchById().asDriver(onErrorRecover: { (err) -> SharedSequence<DriverSharingStrategy, Lake> in
-                error.onNext(err)
-                return PublishSubject<Lake>().asDriver(onErrorJustReturn: Lake())
-            })
-            }.do(onNext: { (lake) in
-                loadImage.accept(lake.getImg())
-            })
-        let uploadImage = loadImage.flatMapLatest { _ in
-           self.mInteractor.loadImage(self.mCurrentLake?.getImg() ?? "" ).asDriver(onErrorJustReturn: nil)
-        }.asDriver(onErrorJustReturn: nil)
+        let lake = currentLake.asDriver(onErrorJustReturn: nil)
+            .flatMapLatest { [weak self] lake -> Driver<Lake> in
+                guard let `self` = self else { return .empty() }
+                let specification = LakeByIdSpecification(id: lake?.getId() ?? 0)
+                self.mInteractor.setSpecification(specification: specification)
+                return self.mInteractor
+                    .fetchById()
+                    .asDriver(onErrorRecover: { (err) -> Driver<Lake> in
+                        error.accept(err)
+                        return .just(Lake())
+                    })
+            }
         
-        return Output(recievedLake: lake, recievedImage: uploadImage, fetchError: error.asDriver(onErrorJustReturn: DriverError.undefenedError))
+        let uploadImage = lake.asDriver()
+            .map { $0.getImg() }
+            .flatMapLatest { [weak self] urlImage -> Driver<UIImage?> in
+                guard let `self` = self else { return .empty() }
+                return self.mInteractor.loadImage(urlImage ?? "").asDriver(onErrorJustReturn: nil)
+            }
+        
+        return Output(
+            recievedLake: lake,
+            recievedImage: uploadImage,
+            fetchError: error.asDriver(onErrorJustReturn: DriverError.undefenedError)
+        )
     }
     
-    func setCurrentLake(_ lake: Lake) {
-        self.mCurrentLake = lake
-    }
     
 }

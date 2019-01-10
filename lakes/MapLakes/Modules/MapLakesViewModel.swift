@@ -11,12 +11,6 @@ import RxSwift
 import RxCocoa
 import GoogleMaps
 
-//protocol MapLakesViewModelInput {
-//    func recieveLakes()
-////    func recieveCurrentLake(_ marker: GMSMarker)->Lake?
-//    func openLakeDetail()
-////    func passDataFromMap(_ lake: Lake?, _ segue: UIStoryboardSegue)
-//}
 
 protocol ViewModelType {
     associatedtype Input
@@ -46,29 +40,33 @@ final class MapLakesViewModel: ViewModelType {
     }
     
     func perform(input: MapLakesViewModel.Input) -> MapLakesViewModel.Output {
-        let error = PublishSubject<Error>()
-        let lakes = input.recieveLakes.flatMapLatest {
-            return self.mInteractor.fetchAll().asDriver(onErrorRecover: { (err) -> SharedSequence<DriverSharingStrategy, [Lake]> in
-                error.onNext(err)
-                return PublishSubject<[Lake]>().asDriver(onErrorJustReturn: [])
-            }).map({ (lakes) -> [GMSMarker : Lake] in 
-                var markers:[GMSMarker : Lake] = [:]
-                for lake in lakes {
-                    let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: lake.getLat(), longitude: lake.getLon()))
-                    marker.title = lake.getTitle()
-                    markers.updateValue(lake, forKey: marker)
-                }
-                return markers
-            })
+        let error = PublishRelay<Error>()
+        let lakes = input.recieveLakes.flatMapLatest { [weak self] _ -> Driver<[GMSMarker : Lake]> in
+            guard let `self` = self else { return .empty() }
+            return self.mInteractor
+                .fetchAll()
+                .asDriver(onErrorJustReturn: [])
+                .map({ lakes -> [GMSMarker : Lake] in
+                    var markers:[GMSMarker : Lake] = [:]
+                    for lake in lakes {
+                        let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: lake.getLat(), longitude: lake.getLon()))
+                        marker.title = lake.getTitle()
+                        markers.updateValue(lake, forKey: marker)
+                    }
+                    return markers
+                })
         }
-        input.openDataFromMap.withLatestFrom(lakes) { (marker, markers) -> Lake in
-            return markers[marker]!
-            }.drive(onNext: self.mRouter.toLakeDetails).disposed(by: disposeBag)
+        
+        input.openDataFromMap
+            .withLatestFrom(lakes) { (marker, markers) -> Lake in
+                return markers[marker]!
+            }
+            .drive(onNext: mRouter.toLakeDetails)
+            .disposed(by: disposeBag)
         
         let errors = error.asDriver(onErrorJustReturn: DriverError.undefenedError)
         return Output(recievedLakes: lakes, fetchError: errors)
     }
-    
 }
 
 enum DriverError: Error {
